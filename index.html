@@ -112,7 +112,7 @@
 
     <h1 class="stroke">우리 동네 미분양, 전국 흐름과 30초 안에 비교해보세요</h1>
     <p>전국 기사 숫자와 우리 동네 숫자를 따로 찾지 않고 한 화면에서 바로 비교합니다. 가격 판단은 알려드리지 않습니다 — 공급이 최근 어떻게 바뀌었는지, 그 정보 공백만 채워드립니다.</p>
-    <a href="./app.html" class="cta-btn disabled" id="ctaTop">앱 준비 중</a>
+    <a href="./app.html" class="cta-btn" id="ctaTop">앱 실행해보기</a>
 
     <div class="ticker">
       <div><div class="t-num">37호</div><div class="t-lbl">연제구 60~85㎡ 미분양 (2026-08)</div></div>
@@ -198,8 +198,8 @@
     <h2>④ 지금 확인해보기 (F-01)</h2>
     <div class="card" style="text-align:center">
       <p>면적 구간을 선택하면, 우리 동네 4개월 추이와 전국 수치를 함께 보여드립니다.</p>
-      <a href="./app.html" class="cta-btn" style="background:linear-gradient(90deg,var(--p1),var(--p6))" id="ctaMain">앱 준비 중 (M6-02에서 연결 예정)</a>
-      <p class="note" style="margin-top:10px">지금은 랜딩(이 페이지)만 배포된 상태이며, 실제 계산 화면은 다음 단계에서 연결합니다.</p>
+      <a href="./app.html" class="cta-btn" style="background:linear-gradient(90deg,var(--p1),var(--p6))" id="ctaMain">지금 앱 실행하기</a>
+      <p class="note" style="margin-top:10px">면적 구간 버튼을 누르면 연제구 4개월 추이와 전국 수치를 바로 비교해서 보여드립니다.</p>
     </div>
   </div>
 </section>
@@ -210,11 +210,12 @@
     <h2>⑤ 테스트 결과</h2>
     <div class="card">
       <table>
-        <tr><th>요구사항</th><th>내용</th><th>결과</th></tr>
-        <tr><td>R-01 정상</td><td>면적 구간 선택 → 4개월 표+전국 비교+해석 문구</td><td class="pending">테스트 예정 (M6-02)</td></tr>
-        <tr><td>R-02 빈값</td><td>구간 미선택 시 안내 문구</td><td class="pending">테스트 예정 (M6-02)</td></tr>
-        <tr><td>R-03 오류</td><td>데이터 로드 실패 시 안내</td><td class="pending">테스트 예정 (M6-02)</td></tr>
+        <tr><th>요구사항</th><th>확인한 것</th><th>결과</th></tr>
+        <tr><td>R-01 정상</td><td>"60~85㎡" 클릭 → 4개월 표(190·190·189·37)+전월대비 −80.4%+전국 46,544호</td><td style="color:var(--down);font-weight:800">✅ 통과</td></tr>
+        <tr><td>R-02 빈값</td><td>버튼 미선택 시 "면적 구간을 선택하면 결과가 나타납니다." 표시</td><td style="color:var(--down);font-weight:800">✅ 통과</td></tr>
+        <tr><td>R-03 오류</td><td>data.js 임시 제거 후 "데이터를 불러오지 못했습니다" 안내 표시</td><td style="color:var(--down);font-weight:800">✅ 통과</td></tr>
       </table>
+      <p class="note" style="margin-top:10px">모두 로컬(app.html)에서 수강생이 직접 눌러 확인함(2026-09-19) · 배포 주소에서 다시 확인하는 「배포 확인」은 M6-04에서 진행 · 상세 기록: <code>docs/test_log.md</code></p>
     </div>
   </div>
 </section>
